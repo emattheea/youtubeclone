@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/emattheea/youtubeclone/issues"
   },
-  "homepage": "https://github.com/emattheea/youtubeclone#readme"
+  "homepage": "https://github.com/emattheea/youtubeclone#readme",
+  "dependencies": {
+    "config": "^3.3.6",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "joi": "^17.4.2",
+    "mongoose": "^6.0.10",
+    "nodemon": "^2.0.13"
+  }
 }
