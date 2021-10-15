@@ -1,0 +1,13 @@
+
+
+exports.validateCommment = (req, res, next) => {
+const data = req.body; 
+if(
+(data.hasOwnProperty('text') && typeof(data.text) === 'string') && 
+(data.hasOwnProperty('videoId') && typeof(data.videoId) === 'string') && 
+(data.hasOwnProperty('like') && typeof(data.likes) === 'number') && 
+(data.hasOwnProperty('dislikes') && typeof(data.dislikes) === 'number')
+        ){
+            return next();
+}else{
+return res.status(400).send({error: 'Missing required properties.'});

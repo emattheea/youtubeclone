@@ -11,8 +11,8 @@ const commentSchema = new mongoose.Schema({
     timeStamp: {type: Date, default: Date.now()},
     likes: {type: Number, default: 0},
     dislikes: {type: Number, default: 0},
-    replies: [{type: replySchema}],
-})
+    replies: {type: [replySchema]},
+});
 
 const Reply = mongoose.model('Reply', replySchema);
 const Comment = mongoose.model('Comment', commentSchema);
