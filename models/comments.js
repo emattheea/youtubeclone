@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const Joi = require('joi');
+
 
 const replySchema = new mongoose.Schema({
     text: {type: String, required: true, minlength: 5, maxlength: 1000},
@@ -21,7 +23,6 @@ const Comment = mongoose.model('Comment', commentSchema);
 function validateReply(Reply) {
     const schema = Joi.object({
     text: Joi.string().min(5).max(1000).required(),
-    timeStamp: Joi.Date().Date.now().required(),
     });
     
     return schema.validate(Reply); 
@@ -33,9 +34,6 @@ function validateComment(Comment) {
     const schema = Joi.object({
     text: Joi.string().min(5).max(1000).required(),
     videoID: Joi.string().required(),
-    timeStamp: Joi.Date().Date.now().required(),
-    dislikes: Joi.number().required(),
-    likes:Joi.number().required(),
     });
     
     return schema.validate(Comment); 
